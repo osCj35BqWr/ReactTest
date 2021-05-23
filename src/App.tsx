@@ -21,9 +21,9 @@ function App() {
     conditionText: "",
     icon: ""
     });
-  const getWeather = (e: any) => {
+  const getWeather = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      fetch("https://api.weatherapi.com/v1/current.json?key=064415a68df54a1b9c882942212305&q=London&aqi=no")
+      fetch(`https://api.weatherapi.com/v1/current.json?key=064415a68df54a1b9c882942212305&q=${city}&aqi=no`)
       .then(res => res.json())
       .then(data => {
         setResults({
